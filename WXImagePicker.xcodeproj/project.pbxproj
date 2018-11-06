@@ -42,7 +42,8 @@
 		C7374D6321917C03006C438F = {
 			isa = PBXGroup;
 			children = (
-				C7374D6E21917C03006C438F /* WXImagePicker */,
+				C7374D86219181D0006C438F /* ImagePicker */,
+				C7374D6E21917C03006C438F /* WXImagePickerDemo */,
 				C7374D6D21917C03006C438F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,7 +56,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C7374D6E21917C03006C438F /* WXImagePicker */ = {
+		C7374D6E21917C03006C438F /* WXImagePickerDemo */ = {
 			isa = PBXGroup;
 			children = (
 				C7374D6F21917C03006C438F /* AppDelegate.h */,
@@ -68,7 +69,14 @@
 				C7374D7D21917C05006C438F /* Info.plist */,
 				C7374D7E21917C05006C438F /* main.m */,
 			);
-			path = WXImagePicker;
+			path = WXImagePickerDemo;
+			sourceTree = "<group>";
+		};
+		C7374D86219181D0006C438F /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYFVDC483X;
-				INFOPLIST_FILE = WXImagePicker/Info.plist;
+				INFOPLIST_FILE = WXImagePickerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYFVDC483X;
-				INFOPLIST_FILE = WXImagePicker/Info.plist;
+				INFOPLIST_FILE = WXImagePickerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
