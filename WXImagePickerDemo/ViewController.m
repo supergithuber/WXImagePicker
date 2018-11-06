@@ -2,7 +2,7 @@
 //  ViewController.m
 //  WXImagePicker
 //
-//  Created by HFY on 2018/11/6.
+//  Created by Wuxi on 2018/11/6.
 //  Copyright © 2018年 wuxi. All rights reserved.
 //
 
