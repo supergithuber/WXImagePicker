@@ -13,6 +13,7 @@
 		C7374D7921917C05006C438F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7374D7821917C05006C438F /* Assets.xcassets */; };
 		C7374D7C21917C05006C438F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7374D7A21917C05006C438F /* LaunchScreen.storyboard */; };
 		C7374D7F21917C05006C438F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7E21917C05006C438F /* main.m */; };
+		C7374D8921918611006C438F /* WXImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D8821918611006C438F /* WXImagePickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		C7374D7B21917C05006C438F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7374D7D21917C05006C438F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7374D7E21917C05006C438F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7374D8721918611006C438F /* WXImagePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXImagePickerViewController.h; sourceTree = "<group>"; };
+		C7374D8821918611006C438F /* WXImagePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXImagePickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 		C7374D86219181D0006C438F /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				C7374D8721918611006C438F /* WXImagePickerViewController.h */,
+				C7374D8821918611006C438F /* WXImagePickerViewController.m */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				C7374D7421917C03006C438F /* ViewController.m in Sources */,
 				C7374D7F21917C05006C438F /* main.m in Sources */,
 				C7374D7121917C03006C438F /* AppDelegate.m in Sources */,
+				C7374D8921918611006C438F /* WXImagePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
