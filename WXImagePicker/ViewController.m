@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "WXImagePickerViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<WXImagePickerControllerDelegate>
 
 @end
 
@@ -32,6 +33,18 @@
 }
 
 - (void)openAlbum:(UIButton *)sender{
+    WXImagePickerViewController *imagePicker = [[WXImagePickerViewController alloc] init];
+    imagePicker.imagePickerDelegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+//MARK: - WXImagePickerControllerDelegate
+- (void)wxImagePickerController:(WXImagePickerViewController *)imagePickerController
+                 selectedImages:(NSArray *)imageAssets
+                isOriginalImage:(BOOL)originalImage{
+    
+}
+- (void)wxImagePickerControllerDidCancel:(WXImagePickerViewController *)imagePickerController{
     
 }
 

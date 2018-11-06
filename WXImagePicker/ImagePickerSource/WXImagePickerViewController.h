@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, WXImagePickerFilterType) {
     WXImagePickerFilterTypePhotos,
     WXImagePickerFilterTypeVideos,
 };
-@class WXImagePickerController;
+@class WXImagePickerViewController;
 @protocol WXImagePickerControllerDelegate <NSObject>
 @optional
 /**
@@ -25,11 +25,11 @@ typedef NS_ENUM(NSUInteger, WXImagePickerFilterType) {
  *  @param imageAssets           the seleted photos packaged DNAsset type instances
  *  @param originalImage             if the value is yes, the seleted photos is full image
  */
-- (void)wxImagePickerController:(WXImagePickerController *)imagePickerController
+- (void)wxImagePickerController:(WXImagePickerViewController *)imagePickerController
                  selectedImages:(NSArray *)imageAssets
                 isOriginalImage:(BOOL)originalImage;
 
-- (void)wxImagePickerControllerDidCancel:(WXImagePickerController *)imagePickerController;
+- (void)wxImagePickerControllerDidCancel:(WXImagePickerViewController *)imagePickerController;
 @end
 
 @interface WXImagePickerViewController : UINavigationController
