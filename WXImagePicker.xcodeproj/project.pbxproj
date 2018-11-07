@@ -14,6 +14,9 @@
 		C7374D7C21917C05006C438F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7374D7A21917C05006C438F /* LaunchScreen.storyboard */; };
 		C7374D7F21917C05006C438F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7E21917C05006C438F /* main.m */; };
 		C7374D8921918611006C438F /* WXImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D8821918611006C438F /* WXImagePickerViewController.m */; };
+		C7374D8F2192840E006C438F /* WXAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D8E2192840E006C438F /* WXAsset.m */; };
+		C7374D922192841D006C438F /* WXAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D912192841D006C438F /* WXAlbum.m */; };
+		C7374D9621928CD2006C438F /* WXAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D9521928CD2006C438F /* WXAlbumTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,12 @@
 		C7374D7E21917C05006C438F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C7374D8721918611006C438F /* WXImagePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXImagePickerViewController.h; sourceTree = "<group>"; };
 		C7374D8821918611006C438F /* WXImagePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXImagePickerViewController.m; sourceTree = "<group>"; };
+		C7374D8D2192840E006C438F /* WXAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAsset.h; sourceTree = "<group>"; };
+		C7374D8E2192840E006C438F /* WXAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAsset.m; sourceTree = "<group>"; };
+		C7374D902192841D006C438F /* WXAlbum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAlbum.h; sourceTree = "<group>"; };
+		C7374D912192841D006C438F /* WXAlbum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAlbum.m; sourceTree = "<group>"; };
+		C7374D9421928CD2006C438F /* WXAlbumTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAlbumTableViewCell.h; sourceTree = "<group>"; };
+		C7374D9521928CD2006C438F /* WXAlbumTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAlbumTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +87,48 @@
 		C7374D86219181D0006C438F /* ImagePickerSource */ = {
 			isa = PBXGroup;
 			children = (
+				C7374D9321928CA8006C438F /* Views */,
+				C7374D8C219283EA006C438F /* Helper */,
+				C7374D8B219283E2006C438F /* Model */,
+				C7374D8A219283D7006C438F /* Controller */,
 				C7374D8721918611006C438F /* WXImagePickerViewController.h */,
 				C7374D8821918611006C438F /* WXImagePickerViewController.m */,
 			);
 			path = ImagePickerSource;
+			sourceTree = "<group>";
+		};
+		C7374D8A219283D7006C438F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C7374D8B219283E2006C438F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7374D8D2192840E006C438F /* WXAsset.h */,
+				C7374D8E2192840E006C438F /* WXAsset.m */,
+				C7374D902192841D006C438F /* WXAlbum.h */,
+				C7374D912192841D006C438F /* WXAlbum.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C7374D8C219283EA006C438F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C7374D9321928CA8006C438F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7374D9421928CD2006C438F /* WXAlbumTableViewCell.h */,
+				C7374D9521928CD2006C438F /* WXAlbumTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +201,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7374D922192841D006C438F /* WXAlbum.m in Sources */,
 				C7374D7421917C03006C438F /* ViewController.m in Sources */,
+				C7374D9621928CD2006C438F /* WXAlbumTableViewCell.m in Sources */,
+				C7374D8F2192840E006C438F /* WXAsset.m in Sources */,
 				C7374D7F21917C05006C438F /* main.m in Sources */,
 				C7374D7121917C03006C438F /* AppDelegate.m in Sources */,
 				C7374D8921918611006C438F /* WXImagePickerViewController.m in Sources */,
@@ -303,6 +353,7 @@
 				DEVELOPMENT_TEAM = KYFVDC483X;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = WXImagePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +372,7 @@
 				DEVELOPMENT_TEAM = KYFVDC483X;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = WXImagePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

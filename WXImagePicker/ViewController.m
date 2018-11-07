@@ -45,7 +45,7 @@
     
 }
 - (void)wxImagePickerControllerDidCancel:(WXImagePickerViewController *)imagePickerController{
-    
+    [imagePickerController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
