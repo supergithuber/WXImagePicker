@@ -9,7 +9,9 @@
 #import "WXImagePickerHelper.h"
 #import <Photos/Photos.h>
 #import "WXAlbum.h"
+#import "WXAsset.h"
 
+static NSString *const kLastAlbumIdentifierKey = @"com.sivanwu.lastAlbumIdentifier";
 static dispatch_queue_t imageFetchQueue() {
     static dispatch_queue_t queue = nil;
     static dispatch_once_t onceToken;
@@ -89,5 +91,45 @@ static dispatch_queue_t imageFetchQueue() {
                                               subtype:PHAssetCollectionSubtypeAny
                                               options:userAlbumsOptions]];
     return albumsArray;
+}
+//获取图片
++ (void)fetchImageSizeWithAsset:(WXAsset *)asset
+     imageSizeCompletionHandler:(void(^)(CGFloat sizeInBytes, NSString *sizeString))handler{
+    if (!asset){
+        handler(0, @"0M");
+        return;
+    }
+    [[PHImageManager defaultManager] requestImageDataForAsset:asset.asset
+                                                      options:nil
+                                                resultHandler:^(NSData * _Nullable imageData,
+                                                                NSString * _Nullable dataUTI,
+                                                                UIImageOrientation orientation,
+                                                                NSDictionary * _Nullable info) {
+                                                    CGFloat imageSize = 0.0;
+                                                    NSString *sizeString = @"0M";
+                                                    if (!imageData){
+                                                        handler(imageSize, sizeString);
+                                                        return;
+                                                    }
+                                                    imageSize = imageData.length;
+                                                    if (imageSize > pow(2, 20)){
+                                                        CGFloat size = imageSize / (1024*1024);
+                                                        sizeString = [NSString stringWithFormat:@"%.1fM", size];
+                                                    }else{
+                                                        CGFloat size = imageSize / 1024;
+                                                        sizeString = [NSString stringWithFormat:@"%.1fK", size];
+                                                    }
+                                                    handler(imageSize, sizeString);
+                                                    return;
+    }];
+}
++ (void)saveLastAblumIdentifier:(NSString *)identifier {
+    if (identifier.length <= 0)  return;
+    [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:kLastAlbumIdentifierKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSString *)albumIdentifier {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kLastAlbumIdentifierKey];
 }
 @end
