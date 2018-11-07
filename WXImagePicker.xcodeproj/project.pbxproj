@@ -17,6 +17,7 @@
 		C7374D8F2192840E006C438F /* WXAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D8E2192840E006C438F /* WXAsset.m */; };
 		C7374D922192841D006C438F /* WXAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D912192841D006C438F /* WXAlbum.m */; };
 		C7374D9621928CD2006C438F /* WXAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D9521928CD2006C438F /* WXAlbumTableViewCell.m */; };
+		C7374D992192BEFD006C438F /* WXImagePickerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D982192BEFD006C438F /* WXImagePickerHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		C7374D912192841D006C438F /* WXAlbum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAlbum.m; sourceTree = "<group>"; };
 		C7374D9421928CD2006C438F /* WXAlbumTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAlbumTableViewCell.h; sourceTree = "<group>"; };
 		C7374D9521928CD2006C438F /* WXAlbumTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAlbumTableViewCell.m; sourceTree = "<group>"; };
+		C7374D972192BEFD006C438F /* WXImagePickerHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXImagePickerHelper.h; sourceTree = "<group>"; };
+		C7374D982192BEFD006C438F /* WXImagePickerHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXImagePickerHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 		C7374D8C219283EA006C438F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C7374D972192BEFD006C438F /* WXImagePickerHelper.h */,
+				C7374D982192BEFD006C438F /* WXImagePickerHelper.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7374D992192BEFD006C438F /* WXImagePickerHelper.m in Sources */,
 				C7374D922192841D006C438F /* WXAlbum.m in Sources */,
 				C7374D7421917C03006C438F /* ViewController.m in Sources */,
 				C7374D9621928CD2006C438F /* WXAlbumTableViewCell.m in Sources */,
