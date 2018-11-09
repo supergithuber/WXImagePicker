@@ -7,6 +7,8 @@
 //
 
 #import "WXAlbumTableViewController.h"
+#import "UIViewController+NavigationBarItem.h"
+#import "WXImagePickerViewController.h"
 
 @interface WXAlbumTableViewController ()
 
@@ -26,7 +28,22 @@
 }
 
 - (void)setupView {
-    
+    self.title = @"Album";
+    [self createBarButtonItemAtPosition:WXNavigationBarPositionRight title:@"cancel" action:@selector(cancelAction:)];
+}
+
+- (void)cancelAction:(id)sender {
+    WXImagePickerViewController *navigationController = [self imagePickerViewController];
+    if (navigationController && [navigationController.imagePickerDelegate respondsToSelector:@selector(wxImagePickerControllerDidCancel:)]){
+        [navigationController.imagePickerDelegate wxImagePickerControllerDidCancel:navigationController];
+    }
+}
+
+- (WXImagePickerViewController *)imagePickerViewController {
+    if (!self.navigationController || ![self.navigationController isKindOfClass:[WXImagePickerViewController class]]){
+        NSAssert(false, @"nil or error navigationController");
+    }
+    return (WXImagePickerViewController *)self.navigationController;
 }
 
 #pragma mark - Table view data source

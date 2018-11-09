@@ -87,6 +87,24 @@
                               highlightedImage:(UIImage *)highlightedImage
                                          title:(NSString *)title
                                         action:(SEL)action {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 84, 44)];
+    [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor wx_hexStringToColor:@"#808080"] forState:UIControlStateHighlighted];
+    UIEdgeInsets imageInsets = UIEdgeInsetsMake(0, -20, 0, 60);
+    UIEdgeInsets titleInsets = UIEdgeInsetsMake(0, -45, 0, -15);
+    [button.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
+    [button setImageEdgeInsets:imageInsets];
+    [button setTitleEdgeInsets:titleInsets];
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitle:title forState:UIControlStateHighlighted];
+    [button setImage:normalImage forState:UIControlStateNormal];
+    [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    self.navigationItem.leftBarButtonItem = barButtonItem;
 }
 @end
