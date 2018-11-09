@@ -7,6 +7,8 @@
 //
 
 #import "WXImagePickerViewController.h"
+#import "WXAlbumTableViewController.h"
+#import "WXImageCollectionViewController.h"
 
 @interface WXImagePickerViewController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
@@ -22,6 +24,13 @@
         self.delegate = self;
     }
     self.interactivePopGestureRecognizer.delegate = self;
+    
+    [self showAlbumViewController];
+}
+
+- (void)showAlbumViewController {
+    WXAlbumTableViewController *albumViewController = [WXAlbumTableViewController new];
+    [self setViewControllers:@[albumViewController]];
 }
 
 //MARK: - UIGestureRecognizerDelegate
@@ -33,4 +42,5 @@
         return YES;
     }
 }
+
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7057B6C219529F800D457CA /* WXAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B6B219529F800D457CA /* WXAlbumTableViewController.m */; };
+		C7057B6F21952A2100D457CA /* WXImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B6E21952A2100D457CA /* WXImageCollectionViewController.m */; };
+		C7057B7321952D9F00D457CA /* UIViewController+NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B7221952D9F00D457CA /* UIViewController+NavigationBarItem.m */; };
+		C7057B76219530B600D457CA /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B75219530B600D457CA /* UIColor+Hex.m */; };
 		C7374D7121917C03006C438F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7021917C03006C438F /* AppDelegate.m */; };
 		C7374D7421917C03006C438F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7321917C03006C438F /* ViewController.m */; };
 		C7374D7721917C03006C438F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7374D7521917C03006C438F /* Main.storyboard */; };
@@ -21,6 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C7057B6A219529F800D457CA /* WXAlbumTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAlbumTableViewController.h; sourceTree = "<group>"; };
+		C7057B6B219529F800D457CA /* WXAlbumTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAlbumTableViewController.m; sourceTree = "<group>"; };
+		C7057B6D21952A2100D457CA /* WXImageCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXImageCollectionViewController.h; sourceTree = "<group>"; };
+		C7057B6E21952A2100D457CA /* WXImageCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXImageCollectionViewController.m; sourceTree = "<group>"; };
+		C7057B7121952D9F00D457CA /* UIViewController+NavigationBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBarItem.h"; sourceTree = "<group>"; };
+		C7057B7221952D9F00D457CA /* UIViewController+NavigationBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBarItem.m"; sourceTree = "<group>"; };
+		C7057B74219530B600D457CA /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		C7057B75219530B600D457CA /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		C7374D6C21917C03006C438F /* WXImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7374D6F21917C03006C438F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C7374D7021917C03006C438F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +66,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7057B7021952D4F00D457CA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C7057B7121952D9F00D457CA /* UIViewController+NavigationBarItem.h */,
+				C7057B7221952D9F00D457CA /* UIViewController+NavigationBarItem.m */,
+				C7057B74219530B600D457CA /* UIColor+Hex.h */,
+				C7057B75219530B600D457CA /* UIColor+Hex.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		C7374D6321917C03006C438F = {
 			isa = PBXGroup;
 			children = (
@@ -90,12 +113,11 @@
 		C7374D86219181D0006C438F /* ImagePickerSource */ = {
 			isa = PBXGroup;
 			children = (
+				C7057B7021952D4F00D457CA /* Category */,
 				C7374D9321928CA8006C438F /* Views */,
 				C7374D8C219283EA006C438F /* Helper */,
 				C7374D8B219283E2006C438F /* Model */,
 				C7374D8A219283D7006C438F /* Controller */,
-				C7374D8721918611006C438F /* WXImagePickerViewController.h */,
-				C7374D8821918611006C438F /* WXImagePickerViewController.m */,
 			);
 			path = ImagePickerSource;
 			sourceTree = "<group>";
@@ -103,6 +125,12 @@
 		C7374D8A219283D7006C438F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C7374D8721918611006C438F /* WXImagePickerViewController.h */,
+				C7374D8821918611006C438F /* WXImagePickerViewController.m */,
+				C7057B6A219529F800D457CA /* WXAlbumTableViewController.h */,
+				C7057B6B219529F800D457CA /* WXAlbumTableViewController.m */,
+				C7057B6D21952A2100D457CA /* WXImageCollectionViewController.h */,
+				C7057B6E21952A2100D457CA /* WXImageCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,11 +235,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7374D992192BEFD006C438F /* WXImagePickerHelper.m in Sources */,
+				C7057B76219530B600D457CA /* UIColor+Hex.m in Sources */,
 				C7374D922192841D006C438F /* WXAlbum.m in Sources */,
 				C7374D7421917C03006C438F /* ViewController.m in Sources */,
 				C7374D9621928CD2006C438F /* WXAlbumTableViewCell.m in Sources */,
 				C7374D8F2192840E006C438F /* WXAsset.m in Sources */,
+				C7057B7321952D9F00D457CA /* UIViewController+NavigationBarItem.m in Sources */,
+				C7057B6C219529F800D457CA /* WXAlbumTableViewController.m in Sources */,
 				C7374D7F21917C05006C438F /* main.m in Sources */,
+				C7057B6F21952A2100D457CA /* WXImageCollectionViewController.m in Sources */,
 				C7374D7121917C03006C438F /* AppDelegate.m in Sources */,
 				C7374D8921918611006C438F /* WXImagePickerViewController.m in Sources */,
 			);
