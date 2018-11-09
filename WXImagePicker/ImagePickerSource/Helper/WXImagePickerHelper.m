@@ -70,7 +70,11 @@ static dispatch_queue_t imageFetchQueue() {
                 }
             }];
         }
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (completeHandelr) {
+                completeHandelr([list copy]);
+            }
+        });
     };
     dispatch_async(imageFetchQueue(), block);
 }

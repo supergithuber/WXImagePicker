@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSInteger count;
 
+@property (nonatomic, readonly, nullable) NSAttributedString *albumAttributedString;
+
 + (instancetype)albumWithAssetCollection:(PHAssetCollection *)collection
                                  results:(PHFetchResult *)results;
 
