@@ -11,6 +11,7 @@
 		C7057B6F21952A2100D457CA /* WXImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B6E21952A2100D457CA /* WXImageCollectionViewController.m */; };
 		C7057B7321952D9F00D457CA /* UIViewController+NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B7221952D9F00D457CA /* UIViewController+NavigationBarItem.m */; };
 		C7057B76219530B600D457CA /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B75219530B600D457CA /* UIColor+Hex.m */; };
+		C7057B79219578B200D457CA /* WXImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B78219578B200D457CA /* WXImageFetchOperation.m */; };
 		C7374D7121917C03006C438F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7021917C03006C438F /* AppDelegate.m */; };
 		C7374D7421917C03006C438F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7321917C03006C438F /* ViewController.m */; };
 		C7374D7721917C03006C438F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7374D7521917C03006C438F /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 		C7057B7221952D9F00D457CA /* UIViewController+NavigationBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBarItem.m"; sourceTree = "<group>"; };
 		C7057B74219530B600D457CA /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		C7057B75219530B600D457CA /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		C7057B77219578B200D457CA /* WXImageFetchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXImageFetchOperation.h; sourceTree = "<group>"; };
+		C7057B78219578B200D457CA /* WXImageFetchOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXImageFetchOperation.m; sourceTree = "<group>"; };
 		C7374D6C21917C03006C438F /* WXImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7374D6F21917C03006C438F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C7374D7021917C03006C438F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 			children = (
 				C7374D972192BEFD006C438F /* WXImagePickerHelper.h */,
 				C7374D982192BEFD006C438F /* WXImagePickerHelper.m */,
+				C7057B77219578B200D457CA /* WXImageFetchOperation.h */,
+				C7057B78219578B200D457CA /* WXImageFetchOperation.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				C7374D7421917C03006C438F /* ViewController.m in Sources */,
 				C7374D9621928CD2006C438F /* WXAlbumTableViewCell.m in Sources */,
 				C7374D8F2192840E006C438F /* WXAsset.m in Sources */,
+				C7057B79219578B200D457CA /* WXImageFetchOperation.m in Sources */,
 				C7057B7321952D9F00D457CA /* UIViewController+NavigationBarItem.m in Sources */,
 				C7057B6C219529F800D457CA /* WXAlbumTableViewController.m in Sources */,
 				C7374D7F21917C05006C438F /* main.m in Sources */,
