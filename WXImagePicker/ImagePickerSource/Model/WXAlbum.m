@@ -9,6 +9,12 @@
 #import "WXAlbum.h"
 #import <Photos/Photos.h>
 
+@interface WXAlbum()
+
+@property (nonatomic, strong) NSAttributedString *albumAttributedString;
+
+@end
+
 @implementation WXAlbum
 
 - (instancetype)init {
@@ -33,4 +39,22 @@
     return album;
 }
 
+- (NSAttributedString *)albumAttributedString {
+    if (!_albumAttributedString) {
+        NSString *numberString = [NSString stringWithFormat:@"  (%@)",@(self.count)];
+        NSString *cellTitleString = [NSString stringWithFormat:@"%@%@",self.albumTitle,numberString];
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:cellTitleString];
+        [attributedString setAttributes: @{
+                                           NSFontAttributeName : [UIFont systemFontOfSize:16.0f],
+                                           NSForegroundColorAttributeName : [UIColor blackColor],
+                                           }
+                                  range:NSMakeRange(0, self.albumTitle.length)];
+        [attributedString setAttributes:@{
+                                          NSFontAttributeName : [UIFont systemFontOfSize:16.0f],
+                                          NSForegroundColorAttributeName : [UIColor grayColor],
+                                          } range:NSMakeRange(self.albumTitle.length, numberString.length)];
+        _albumAttributedString = attributedString;
+    }
+    return _albumAttributedString;
+}
 @end

@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 @class WXAlbum;
+@class WXAsset;
 
 @interface WXImagePickerHelper : NSObject
 
@@ -19,6 +21,19 @@ NS_ASSUME_NONNULL_BEGIN
  get album list
  */
 + (void)requestAlbumListWithCompleteHandler:(void (^)(NSArray<WXAlbum *> *))completeHandelr;
+
+//根据asset获取image资源
++ (void)fetchImageSizeWithAsset:(WXAsset *)asset
+         imageSizeCompletionHandler:(void (^)(CGFloat sizeInBytes, NSString * sizeString))handler;
+
++ (void)fetchImageWithAsset:(WXAsset *)asset
+                 targetSize:(CGSize)targetSize
+          imageResutHandler:(void (^)(UIImage *))handler;
+
++ (void)fetchImageWithAsset:(WXAsset *)asset
+                 targetSize:(CGSize)targetSize
+            needHighQuality:(BOOL)isHighQuality
+          imageResutHandler:(void (^)(UIImage * image))handler;
 @end
 
 NS_ASSUME_NONNULL_END
