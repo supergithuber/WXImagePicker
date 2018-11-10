@@ -127,6 +127,30 @@ static dispatch_queue_t imageFetchQueue() {
                                                     return;
     }];
 }
+
++ (void)fetchImageWithAsset:(WXAsset *)asset
+                 targetSize:(CGSize)targetSize
+          imageResutHandler:(void (^)(UIImage * _Nonnull))handler {
+    
+}
+
++ (void)fetchImageWithAsset:(WXAsset *)asset
+                 targetSize:(CGSize)targetSize
+            needHighQuality:(BOOL)isHighQuality
+          imageResutHandler:(void (^)(UIImage * _Nonnull))handler {
+    
+}
+
++ (NSArray *)fetchImageAssetsWithFetchResults:(PHFetchResult *)results {
+    NSMutableArray *array = [NSMutableArray array];
+    [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        @autoreleasepool {
+            WXAsset *asset = [WXAsset assetWithPHAsset:obj];
+            [array addObject:asset];
+        }
+    }];
+    return [array copy];
+}
 + (void)saveLastAblumIdentifier:(NSString *)identifier {
     if (identifier.length <= 0)  return;
     [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:kLastAlbumIdentifierKey];
