@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 @class PHAssetCollection;
 @class PHFetchResult;
 
@@ -26,7 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)albumWithAssetCollection:(PHAssetCollection *)collection
                                  results:(PHFetchResult *)results;
-
+//获取代表相册的缩略图
+- (void)fetchImageWithImageSize:(CGSize)size
+             imageResultHandler:(void(^)(UIImage *))handler;
 @end
 
 NS_ASSUME_NONNULL_END

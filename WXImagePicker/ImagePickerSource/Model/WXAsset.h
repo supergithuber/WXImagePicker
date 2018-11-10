@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString *assetIdentifier;
 @property (nonatomic, strong, readonly)PHAsset *asset;
 
-+ (instancetype)initWithAsset:(PHAsset *)asset;
++ (instancetype)assetWithPHAsset:(PHAsset *)asset;
 
 @end
 

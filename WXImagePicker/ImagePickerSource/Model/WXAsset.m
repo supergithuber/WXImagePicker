@@ -20,7 +20,7 @@
     return self;
 }
 
-+ (instancetype)initWithAsset:(PHAsset *)asset{
++ (instancetype)assetWithPHAsset:(PHAsset *)asset{
     WXAsset *a = [[WXAsset alloc] init];
     if (!asset) {
         return a;

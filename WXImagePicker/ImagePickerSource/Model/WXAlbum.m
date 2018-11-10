@@ -8,6 +8,8 @@
 
 #import "WXAlbum.h"
 #import <Photos/Photos.h>
+#import "WXImagePickerHelper.h"
+#import "WXAsset.h"
 
 @interface WXAlbum()
 
@@ -37,6 +39,15 @@
     album.albumTitle = collection.localizedTitle;
     album.identifier = collection.localIdentifier;
     return album;
+}
+
+- (void)fetchImageWithImageSize:(CGSize)size
+             imageResultHandler:(void (^)(UIImage * _Nonnull))handler {
+    [WXImagePickerHelper fetchImageWithAsset:[WXAsset assetWithPHAsset:self.results.lastObject]
+                                  targetSize:size
+                           imageResutHandler:^(UIImage * _Nonnull image) {
+                               handler(image);
+    }];
 }
 
 - (NSAttributedString *)albumAttributedString {
