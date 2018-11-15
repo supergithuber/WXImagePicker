@@ -12,6 +12,7 @@
 		C7057B7321952D9F00D457CA /* UIViewController+NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B7221952D9F00D457CA /* UIViewController+NavigationBarItem.m */; };
 		C7057B76219530B600D457CA /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B75219530B600D457CA /* UIColor+Hex.m */; };
 		C7057B79219578B200D457CA /* WXImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B78219578B200D457CA /* WXImageFetchOperation.m */; };
+		C71AB5DA219D5E4000A436D2 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71AB5D9219D5E4000A436D2 /* Image.xcassets */; };
 		C7374D7121917C03006C438F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7021917C03006C438F /* AppDelegate.m */; };
 		C7374D7421917C03006C438F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7321917C03006C438F /* ViewController.m */; };
 		C7374D7721917C03006C438F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7374D7521917C03006C438F /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		C7057B75219530B600D457CA /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		C7057B77219578B200D457CA /* WXImageFetchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXImageFetchOperation.h; sourceTree = "<group>"; };
 		C7057B78219578B200D457CA /* WXImageFetchOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXImageFetchOperation.m; sourceTree = "<group>"; };
+		C71AB5D9219D5E4000A436D2 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		C7374D6C21917C03006C438F /* WXImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7374D6F21917C03006C438F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C7374D7021917C03006C438F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		C71AB5D8219D5E2000A436D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C71AB5D9219D5E4000A436D2 /* Image.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C7374D6321917C03006C438F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		C7374D86219181D0006C438F /* ImagePickerSource */ = {
 			isa = PBXGroup;
 			children = (
+				C71AB5D8219D5E2000A436D2 /* Resources */,
 				C7057B7021952D4F00D457CA /* Category */,
 				C7374D9321928CA8006C438F /* Views */,
 				C7374D8C219283EA006C438F /* Helper */,
@@ -228,6 +239,7 @@
 			files = (
 				C7374D7C21917C05006C438F /* LaunchScreen.storyboard in Resources */,
 				C7374D7921917C05006C438F /* Assets.xcassets in Resources */,
+				C71AB5DA219D5E4000A436D2 /* Image.xcassets in Resources */,
 				C7374D7721917C03006C438F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

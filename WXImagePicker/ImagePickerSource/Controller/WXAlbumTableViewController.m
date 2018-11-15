@@ -76,7 +76,13 @@ static NSString* const wxAlbumTableViewCellReuseIdentifier = @"com.sivanwu.album
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     WXAlbum *album = self.albumArray[indexPath.row];
     cell.titleLabel.attributedText = album.albumAttributedString;
-    
+    [album fetchImageWithImageSize:CGSizeMake(100, 100) imageResultHandler:^(UIImage * _Nonnull image) {
+        if (image){
+            
+        }else{
+            cell.imageView.image = [UIImage imageNamed:@"placeholder_picture" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+        }
+    }];
     return cell;
 }
 
