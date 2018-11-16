@@ -10,6 +10,7 @@
 #import <Photos/Photos.h>
 #import "WXAlbum.h"
 #import "WXAsset.h"
+#import "WXImageFetchOperation.h"
 
 static NSString *const kLastAlbumIdentifierKey = @"com.sivanwu.lastAlbumIdentifier";
 static dispatch_queue_t imageFetchQueue() {
@@ -20,6 +21,11 @@ static dispatch_queue_t imageFetchQueue() {
     });
     return queue;
 }
+
+@interface WXImagePickerHelper ()
+@property (nonatomic, strong) NSOperationQueue *imageFetchQueue;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, WXImageFetchOperation*> *fetchImageOperationDics;
+@end
 
 @implementation WXImagePickerHelper
 
@@ -33,7 +39,10 @@ static dispatch_queue_t imageFetchQueue() {
 }
 - (instancetype)init{
     self = [super init];
-    
+    _imageFetchQueue = [NSOperationQueue new];
+    _imageFetchQueue.maxConcurrentOperationCount = 8;
+    _imageFetchQueue.name = @"com.sivanWu.imageFetchQueue";
+    _fetchImageOperationDics = [NSMutableDictionary new];
     return self;
 }
 
@@ -131,13 +140,24 @@ static dispatch_queue_t imageFetchQueue() {
 + (void)fetchImageWithAsset:(WXAsset *)asset
                  targetSize:(CGSize)targetSize
           imageResutHandler:(void (^)(UIImage * _Nonnull))handler {
-    
+    return [self fetchImageWithAsset:asset targetSize:targetSize needHighQuality:NO imageResutHandler:handler];
 }
 
 + (void)fetchImageWithAsset:(WXAsset *)asset
                  targetSize:(CGSize)targetSize
             needHighQuality:(BOOL)isHighQuality
           imageResutHandler:(void (^)(UIImage * _Nonnull))handler {
+    if (!asset){
+        return;
+    }
+    WXImagePickerHelper *helper = [WXImagePickerHelper sharedInstance];
+    WXImageFetchOperation *operation = [[WXImageFetchOperation alloc] initWithAsset:asset.asset];
+    
+    __weak typeof(helper) whelper = helper;
+    
+    [helper.imageFetchQueue addOperation:operation];
+    [helper.fetchImageOperationDics setObject:operation forKey:asset.assetIdentifier];
+    
     
 }
 

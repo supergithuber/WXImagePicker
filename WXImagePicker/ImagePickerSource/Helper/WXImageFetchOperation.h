@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic, getter = isExecuting) BOOL executing;
 @property (assign, nonatomic, getter = isFinished) BOOL finished;
 
+- (instancetype)initWithAsset:(PHAsset *)asset;
 @end
 
 NS_ASSUME_NONNULL_END
