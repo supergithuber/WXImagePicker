@@ -28,4 +28,7 @@
     return self;
 }
 
+- (BOOL)isConcurrent {
+    return YES;
+}
 @end
