@@ -8,8 +8,12 @@
 
 #import "WXImageFetchOperation.h"
 
-@interface WXImageFetchOperation ()
+typedef void(^WXImageResultHandler)(UIImage *image);
 
+@interface WXImageFetchOperation ()
+@property (nonatomic, assign) CGSize targetSize;
+@property (nonatomic, assign) BOOL isHighQuality;
+@property (nonatomic, copy) WXImageResultHandler resultHandler;
 @end
 
 @implementation WXImageFetchOperation
@@ -28,6 +32,13 @@
     return self;
 }
 
+- (void)fetchImageWithTargetSize:(CGSize)size
+                 needHighQuality:(BOOL)isHighQuality
+               imageResutHandler:(void (^)(UIImage * _Nonnull))handler{
+    self.targetSize = size;
+    self.isHighQuality = isHighQuality;
+    self.resultHandler = handler;
+}
 - (BOOL)isConcurrent {
     return YES;
 }

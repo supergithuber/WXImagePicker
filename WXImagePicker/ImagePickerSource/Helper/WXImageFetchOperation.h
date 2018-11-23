@@ -20,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic, getter = isFinished) BOOL finished;
 
 - (instancetype)initWithAsset:(PHAsset *)asset;
+
+- (void)fetchImageWithTargetSize:(CGSize)size
+                 needHighQuality:(BOOL)isHighQuality
+               imageResutHandler:(void (^)(UIImage * image))handler;
 @end
 
 NS_ASSUME_NONNULL_END
