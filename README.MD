@@ -1,0 +1,3 @@
+## WXImagePicker
+
+simulate wechat imagePicker
