@@ -14,6 +14,7 @@ typedef void(^WXImageResultHandler)(UIImage *image);
 @property (nonatomic, assign) CGSize targetSize;
 @property (nonatomic, assign) BOOL isHighQuality;
 @property (nonatomic, copy) WXImageResultHandler resultHandler;
+@property (nonatomic, strong, nullable) PHAsset *asset;
 @end
 
 @implementation WXImageFetchOperation
@@ -39,7 +40,29 @@ typedef void(^WXImageResultHandler)(UIImage *image);
     self.isHighQuality = isHighQuality;
     self.resultHandler = handler;
 }
+
 - (BOOL)isConcurrent {
     return YES;
+}
+- (void)done {
+    self.finished = YES;
+    self.executing = NO;
+    [self reset];
+}
+
+- (void)reset {
+    self.asset = nil;
+}
+
+- (void)setFinished:(BOOL)finished {
+    [self willChangeValueForKey:@"isFinished"];
+    _finished = finished;
+    [self didChangeValueForKey:@"isFinished"];
+}
+
+- (void)setExecuting:(BOOL)executing {
+    [self willChangeValueForKey:@"isExecuting"];
+    _executing = executing;
+    [self didChangeValueForKey:@"isExecuting"];
 }
 @end
