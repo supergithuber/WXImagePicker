@@ -140,7 +140,7 @@ static dispatch_queue_t imageFetchQueue() {
 + (void)fetchImageWithAsset:(WXAsset *)asset
                  targetSize:(CGSize)targetSize
           imageResutHandler:(void (^)(UIImage * _Nonnull))handler {
-    return [self fetchImageWithAsset:asset targetSize:targetSize needHighQuality:NO imageResutHandler:handler];
+    return [self fetchImageWithAsset:asset targetSize:targetSize needHighQuality:YES imageResutHandler:handler];
 }
 
 + (void)fetchImageWithAsset:(WXAsset *)asset
@@ -154,6 +154,11 @@ static dispatch_queue_t imageFetchQueue() {
     WXImageFetchOperation *operation = [[WXImageFetchOperation alloc] initWithAsset:asset.asset];
     
     __weak typeof(helper) whelper = helper;
+    [operation fetchImageWithTargetSize:targetSize needHighQuality:isHighQuality imageResutHandler:^(UIImage * _Nonnull image) {
+        __strong typeof(whelper) shelper = whelper;
+        [shelper.fetchImageOperationDics removeObjectForKey:asset.assetIdentifier];
+        handler(image);
+    }];
     
     [helper.imageFetchQueue addOperation:operation];
     [helper.fetchImageOperationDics setObject:operation forKey:asset.assetIdentifier];

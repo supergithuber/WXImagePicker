@@ -78,9 +78,9 @@ static NSString* const wxAlbumTableViewCellReuseIdentifier = @"com.sivanwu.album
     cell.titleLabel.attributedText = album.albumAttributedString;
     [album fetchImageWithImageSize:CGSizeMake(100, 100) imageResultHandler:^(UIImage * _Nonnull image) {
         if (image){
-            
+            cell.postImageView.image = image;
         }else{
-            cell.imageView.image = [UIImage imageNamed:@"placeholder_picture" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+            cell.postImageView.image = [UIImage imageNamed:@"placeholder_picture" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
         }
     }];
     return cell;
