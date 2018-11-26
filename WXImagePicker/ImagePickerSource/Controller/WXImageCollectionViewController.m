@@ -8,6 +8,7 @@
 
 #import "WXImageCollectionViewController.h"
 #import "UIViewController+NavigationBarItem.h"
+#import "WXPhotoBrowserController.h"
 #import "WXImagePickerViewController.h"
 #import "WXSendButton.h"
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong)NSMutableArray *selectedAssetsArray;
 //view
 @property (nonatomic, strong)WXSendButton *sendButton;
+@property (nonatomic, strong)UICollectionView *imageFlowCollectionView;
 @end
 
 @implementation WXImageCollectionViewController
@@ -93,6 +95,15 @@
 }
 - (void)previewAction:(UIBarButtonItem *)sender {
     
+}
+
+//MARK: get
+
+- (UICollectionView *)imageFlowCollectionView {
+    if (!_imageFlowCollectionView){
+        
+    }
+    return _imageFlowCollectionView;
 }
 
 //MARK: help
