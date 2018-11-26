@@ -9,15 +9,17 @@
 #import "WXImageCollectionViewController.h"
 #import "UIViewController+NavigationBarItem.h"
 #import "WXImagePickerViewController.h"
+#import "WXSendButton.h"
 
 @interface WXImageCollectionViewController ()
-
+//init
 @property (nonatomic, strong)WXAlbum *album;
 @property (nonatomic, copy)NSString *albumIdentifier;
-
+//data
 @property (nonatomic, strong)NSMutableArray *assetsArray;
 @property (nonatomic, strong)NSMutableArray *selectedAssetsArray;
-
+//view
+@property (nonatomic, strong)WXSendButton *sendButton;
 @end
 
 @implementation WXImageCollectionViewController
@@ -61,6 +63,20 @@
 }
 
 - (void)setupToolBar {
+    UIBarButtonItem *previewButton = [[UIBarButtonItem alloc] initWithTitle:@"预览"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(previewAction:)];
+    [previewButton setTintColor:[UIColor blackColor]];
+    previewButton.enabled = NO;
+    
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    UIBarButtonItem *item3 = [[UIBarButtonItem alloc] initWithCustomView:self.sendButton];
+    
+    UIBarButtonItem *item4 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    item4.width = -10;
+    [self setToolbarItems:@[previewButton, item2, item3, item4] animated:NO];
     
 }
 
@@ -74,6 +90,9 @@
     if (controller && [controller.imagePickerDelegate respondsToSelector:@selector(wxImagePickerControllerDidCancel:)]){
         [controller.imagePickerDelegate wxImagePickerControllerDidCancel:controller];
     }
+}
+- (void)previewAction:(UIBarButtonItem *)sender {
+    
 }
 
 //MARK: help

@@ -12,6 +12,7 @@
 		C7057B7321952D9F00D457CA /* UIViewController+NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B7221952D9F00D457CA /* UIViewController+NavigationBarItem.m */; };
 		C7057B76219530B600D457CA /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B75219530B600D457CA /* UIColor+Hex.m */; };
 		C7057B79219578B200D457CA /* WXImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C7057B78219578B200D457CA /* WXImageFetchOperation.m */; };
+		C716F2A621ABC7ED001FE08B /* WXSendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C716F2A521ABC7ED001FE08B /* WXSendButton.m */; };
 		C71AB5DA219D5E4000A436D2 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71AB5D9219D5E4000A436D2 /* Image.xcassets */; };
 		C7374D7121917C03006C438F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7021917C03006C438F /* AppDelegate.m */; };
 		C7374D7421917C03006C438F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7374D7321917C03006C438F /* ViewController.m */; };
@@ -37,6 +38,8 @@
 		C7057B75219530B600D457CA /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		C7057B77219578B200D457CA /* WXImageFetchOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXImageFetchOperation.h; sourceTree = "<group>"; };
 		C7057B78219578B200D457CA /* WXImageFetchOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXImageFetchOperation.m; sourceTree = "<group>"; };
+		C716F2A421ABC7ED001FE08B /* WXSendButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXSendButton.h; sourceTree = "<group>"; };
+		C716F2A521ABC7ED001FE08B /* WXSendButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXSendButton.m; sourceTree = "<group>"; };
 		C71AB5D9219D5E4000A436D2 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		C7374D6C21917C03006C438F /* WXImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7374D6F21917C03006C438F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 			children = (
 				C7374D9421928CD2006C438F /* WXAlbumTableViewCell.h */,
 				C7374D9521928CD2006C438F /* WXAlbumTableViewCell.m */,
+				C716F2A421ABC7ED001FE08B /* WXSendButton.h */,
+				C716F2A521ABC7ED001FE08B /* WXSendButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				C7374D7F21917C05006C438F /* main.m in Sources */,
 				C7057B6F21952A2100D457CA /* WXImageCollectionViewController.m in Sources */,
 				C7374D7121917C03006C438F /* AppDelegate.m in Sources */,
+				C716F2A621ABC7ED001FE08B /* WXSendButton.m in Sources */,
 				C7374D8921918611006C438F /* WXImagePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
