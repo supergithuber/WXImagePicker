@@ -9,6 +9,7 @@
 #import "WXAlbumTableViewController.h"
 #import "UIViewController+NavigationBarItem.h"
 #import "WXImagePickerViewController.h"
+#import "WXImageCollectionViewController.h"
 #import "WXImagePickerHelper.h"
 #import "WXAlbumTableviewCell.h"
 #import "WXAlbum.h"
@@ -94,5 +95,13 @@ static NSString* const wxAlbumTableViewCellReuseIdentifier = @"com.sivanwu.album
     return 64;
 }
 
+//MARK: - tableview Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WXAlbum *album = self.albumArray[indexPath.row];
+    WXImageCollectionViewController *controller = [[WXImageCollectionViewController alloc] initWithAlbum:album];
+    [self.navigationController pushViewController:controller animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end

@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class WXAlbum;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WXImageCollectionViewController : UIViewController
+
+- (instancetype)initWithAlbumIdentifier:(NSString *)identifier;
+
+- (instancetype)initWithAlbum:(WXAlbum *)album;
 
 @end
 
