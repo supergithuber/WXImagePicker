@@ -8,6 +8,7 @@
 
 #import "WXImageCollectionViewController.h"
 #import "UIViewController+NavigationBarItem.h"
+#import "WXImagePickerViewController.h"
 
 @interface WXImageCollectionViewController ()
 
@@ -53,10 +54,36 @@
                             normalImage:[UIImage imageNamed:@"back_normal" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]
                        highlightedImage:[UIImage imageNamed:@"back_highlight" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil]
                                  action:@selector(backButtonAction:)];
+    [self createBarButtonItemAtPosition:WXNavigationBarPositionRight
+                                  title:@"取消"
+                                 action:@selector(cancelAction:)];
+    [self setupToolBar];
+}
+
+- (void)setupToolBar {
+    
 }
 
 //MARK: - button Action
 - (void)backButtonAction:(UIBarButtonItem *)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)cancelAction:(UIBarButtonItem *)sender {
+    WXImagePickerViewController * controller = [self wxImagePickerController];
+    if (controller && [controller.imagePickerDelegate respondsToSelector:@selector(wxImagePickerControllerDidCancel:)]){
+        [controller.imagePickerDelegate wxImagePickerControllerDidCancel:controller];
+    }
+}
+
+//MARK: help
+- (WXImagePickerViewController *)wxImagePickerController {
+    if (!self.navigationController
+        ||
+        ![self.navigationController isKindOfClass:[WXImagePickerViewController class]])
+    {
+        NSAssert(false, @"check the navigation controller");
+    }
+    return (WXImagePickerViewController *)self.navigationController;
 }
 @end
