@@ -2,4 +2,3 @@
 
 simulate wechat imagePicker
 
-continue...
