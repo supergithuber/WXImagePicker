@@ -10,7 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class WXAssetCollectionViewCell;
+@class WXAsset;
+
+@protocol WXAssetCollectionViewCellDelegate <NSObject>
+
+@optional
+- (void)didSelectItemAssetViewCell:(WXAssetCollectionViewCell *)assetCell;
+- (void)didDeselectItemAssetViewCell:(WXAssetCollectionViewCell *)assetCell;
+
+@end
+
 @interface WXAssetCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, strong)WXAsset *asset;
+
+@property (nonatomic, assign)BOOL isSelected;
+@property (nonatomic, weak, nullable)id<WXAssetCollectionViewCellDelegate>delegate;
 
 @end
 
