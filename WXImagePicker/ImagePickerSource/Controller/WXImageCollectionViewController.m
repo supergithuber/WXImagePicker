@@ -11,8 +11,9 @@
 #import "WXPhotoBrowserController.h"
 #import "WXImagePickerViewController.h"
 #import "WXSendButton.h"
+#import "WXAssetCollectionViewCell.h"
 
-@interface WXImageCollectionViewController ()
+@interface WXImageCollectionViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 //init
 @property (nonatomic, strong)WXAlbum *album;
 @property (nonatomic, copy)NSString *albumIdentifier;
@@ -23,6 +24,9 @@
 @property (nonatomic, strong)WXSendButton *sendButton;
 @property (nonatomic, strong)UICollectionView *imageFlowCollectionView;
 @end
+
+
+static NSString* const kAssetCollectionViewCellReuseIdentifier = @"kAssetCollectionViewCell";
 
 @implementation WXImageCollectionViewController
 
@@ -61,6 +65,9 @@
     [self createBarButtonItemAtPosition:WXNavigationBarPositionRight
                                   title:@"取消"
                                  action:@selector(cancelAction:)];
+    
+    [self.view addSubview:self.imageFlowCollectionView];
+    
     [self setupToolBar];
 }
 
@@ -101,9 +108,37 @@
 
 - (UICollectionView *)imageFlowCollectionView {
     if (!_imageFlowCollectionView){
-        
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.minimumLineSpacing = 2.0;
+        layout.minimumInteritemSpacing = 2.0;
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        _imageFlowCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) collectionViewLayout:layout];
+        _imageFlowCollectionView.backgroundColor = [UIColor clearColor];
+        [_imageFlowCollectionView registerClass:[WXAssetCollectionViewCell class] forCellWithReuseIdentifier:kAssetCollectionViewCellReuseIdentifier];
+        _imageFlowCollectionView.alwaysBounceVertical = YES;
+        _imageFlowCollectionView.delegate = self;
+        _imageFlowCollectionView.dataSource = self;
+        _imageFlowCollectionView.showsHorizontalScrollIndicator = YES;
     }
     return _imageFlowCollectionView;
+}
+
+//MARK: dataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section{
+    return self.assetsArray.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    WXAssetCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kAssetCollectionViewCellReuseIdentifier forIndexPath:indexPath];
+    return cell;
+}
+
+//MARK: delegate
+- (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 //MARK: help
