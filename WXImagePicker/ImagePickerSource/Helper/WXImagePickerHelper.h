@@ -17,9 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
-
-+ (void)cancelFetchWithAsset:(WXAsset *)asset;
-
 /**
  get album list
  */
@@ -37,6 +34,11 @@ NS_ASSUME_NONNULL_BEGIN
                  targetSize:(CGSize)targetSize
             needHighQuality:(BOOL)isHighQuality
           imageResutHandler:(void (^)(UIImage * image))handler;
+
+/**
+ 停止获取照片
+ */
++ (void)cancelFetchWithAsset:(WXAsset *)asset;
 @end
 
 NS_ASSUME_NONNULL_END

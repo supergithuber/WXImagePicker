@@ -126,7 +126,7 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
     if (self.asset){
-//        [WXImagePickerHelper ]
+        [WXImagePickerHelper cancelFetchWithAsset:self.asset];
     }
     _asset = nil;
     _isSelected = NO;
@@ -136,11 +136,11 @@
 //MARK: action
 - (void)checkButtonAction:(id)sender {
     if (self.checkButton.selected) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(didDeselectItemAssetViewCell::)]) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didDeselectItemAssetViewCell:)]) {
             [self.delegate didDeselectItemAssetViewCell:self];
         }
     } else {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectItemAssetViewCell::)]) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectItemAssetViewCell:)]) {
             [self.delegate didSelectItemAssetViewCell:self];
         }
     }

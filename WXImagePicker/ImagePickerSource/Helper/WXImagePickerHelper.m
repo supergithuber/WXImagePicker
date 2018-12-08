@@ -166,6 +166,17 @@ static dispatch_queue_t imageFetchQueue() {
     
 }
 
++ (void)cancelFetchWithAsset:(WXAsset *)asset {
+    if (!asset) { return; }
+    WXImagePickerHelper *shared = [WXImagePickerHelper sharedInstance];
+    WXImageFetchOperation *operation = [shared.fetchImageOperationDics objectForKey:asset.assetIdentifier];
+    if (operation) {
+        [operation cancel];
+    }
+    [shared.fetchImageOperationDics removeObjectForKey:asset.assetIdentifier];
+    
+}
+
 + (NSArray *)fetchImageAssetsWithFetchResults:(PHFetchResult *)results {
     NSMutableArray *array = [NSMutableArray array];
     [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
