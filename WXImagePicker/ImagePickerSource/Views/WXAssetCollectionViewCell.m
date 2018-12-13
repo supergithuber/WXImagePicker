@@ -133,6 +133,10 @@
     _delegate = nil;
 }
 
+- (void)setupCellWithAsset:(WXAsset *)asset isSelected:(BOOL)isSelected{
+    
+}
+
 //MARK: action
 - (void)checkButtonAction:(id)sender {
     if (self.checkButton.selected) {

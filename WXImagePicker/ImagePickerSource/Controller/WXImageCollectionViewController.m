@@ -13,7 +13,7 @@
 #import "WXSendButton.h"
 #import "WXAssetCollectionViewCell.h"
 
-@interface WXImageCollectionViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface WXImageCollectionViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, WXAssetCollectionViewCellDelegate>
 //init
 @property (nonatomic, strong)WXAlbum *album;
 @property (nonatomic, copy)NSString *albumIdentifier;
@@ -105,12 +105,14 @@ static NSString* const kAssetCollectionViewCellReuseIdentifier = @"kAssetCollect
 }
 
 //MARK: get
-
+#define kSizeThumbnailCollectionView  ([UIScreen mainScreen].bounds.size.width-10)/4
 - (UICollectionView *)imageFlowCollectionView {
     if (!_imageFlowCollectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.minimumLineSpacing = 2.0;
         layout.minimumInteritemSpacing = 2.0;
+        layout.itemSize = CGSizeMake(kSizeThumbnailCollectionView, kSizeThumbnailCollectionView);
+        layout.sectionInset = UIEdgeInsetsMake(2, 2, 2, 2);
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         _imageFlowCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) collectionViewLayout:layout];
         _imageFlowCollectionView.backgroundColor = [UIColor clearColor];
@@ -131,7 +133,11 @@ static NSString* const kAssetCollectionViewCellReuseIdentifier = @"kAssetCollect
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    WXAssetCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kAssetCollectionViewCellReuseIdentifier forIndexPath:indexPath];
+    WXAssetCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kAssetCollectionViewCellReuseIdentifier
+                                                                                forIndexPath:indexPath];
+    WXAsset *asset = self.assetsArray[indexPath.row];
+    cell.delegate = self;
+    [cell setupCellWithAsset:asset isSelected:[self.selectedAssetsArray containsObject:asset]];
     return cell;
 }
 
@@ -140,6 +146,9 @@ static NSString* const kAssetCollectionViewCellReuseIdentifier = @"kAssetCollect
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+
+//MARK: WXAssetCollectionViewCellDelegate
+
 
 //MARK: help
 - (WXImagePickerViewController *)wxImagePickerController {
