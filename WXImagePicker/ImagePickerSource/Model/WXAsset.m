@@ -30,4 +30,8 @@
     return a;
 }
 
+- (void)didReceiveMemoryWarningInAssets {
+    _cacheImage = nil;
+}
+
 @end

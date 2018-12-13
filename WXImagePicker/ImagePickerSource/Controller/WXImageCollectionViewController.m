@@ -105,7 +105,6 @@ static NSString* const kAssetCollectionViewCellReuseIdentifier = @"kAssetCollect
 }
 
 //MARK: get
-#define kSizeThumbnailCollectionView  ([UIScreen mainScreen].bounds.size.width-10)/4
 - (UICollectionView *)imageFlowCollectionView {
     if (!_imageFlowCollectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];

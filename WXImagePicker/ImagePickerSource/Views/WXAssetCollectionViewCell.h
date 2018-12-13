@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define kSizeThumbnailCollectionView  ([UIScreen mainScreen].bounds.size.width-10)/4
+
 @class WXAssetCollectionViewCell;
 @class WXAsset;
 

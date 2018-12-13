@@ -11,6 +11,7 @@
 @class WXAlbum;
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface WXImageCollectionViewController : UIViewController
 
 - (instancetype)initWithAlbumIdentifier:(NSString *)identifier;

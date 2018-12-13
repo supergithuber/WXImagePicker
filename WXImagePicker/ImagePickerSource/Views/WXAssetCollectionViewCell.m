@@ -8,6 +8,7 @@
 
 #import "WXAssetCollectionViewCell.h"
 #import "WXImagePickerHelper.h"
+#import "WXAsset.h"
 
 @interface WXAssetCollectionViewCell ()
 
@@ -134,7 +135,26 @@
 }
 
 - (void)setupCellWithAsset:(WXAsset *)asset isSelected:(BOOL)isSelected{
+    self.asset = asset;
+    self.isSelected = isSelected;
+    if (self.asset.cacheImage){
+        self.imageView.image = self.asset.cacheImage;
+    }
     
+    __weak typeof(self) weakSelf = self;
+    [WXImagePickerHelper fetchImageWithAsset:self.asset
+                                  targetSize:CGSizeMake(kSizeThumbnailCollectionView, kSizeThumbnailCollectionView)
+                           imageResutHandler:^(UIImage * _Nonnull image) {
+                               __strong typeof(weakSelf) strongSelf = weakSelf;
+                               if (image) {
+                                   strongSelf.asset.cacheImage = image;
+                                   strongSelf.imageView.image = image;
+                               }else{
+                                   strongSelf.imageView.image = [UIImage imageNamed:@"placeholder_picture"
+                                                                           inBundle:[NSBundle bundleForClass:[self class]]
+                                                      compatibleWithTraitCollection:nil];
+                               }
+    }];
 }
 
 //MARK: action
